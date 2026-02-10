@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SketchLite MVP</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>SketchLite</h1>
+      <p>Excalidraw-style MVP</p>
+    </header>
+
+    <main>
+      <section class="toolbar">
+        <div class="tool-group" role="group" aria-label="Drawing tools">
+          <button data-tool="select" class="active">Select</button>
+          <button data-tool="freehand">Freehand</button>
+          <button data-tool="line">Line</button>
+          <button data-tool="rectangle">Rectangle</button>
+          <button data-tool="ellipse">Ellipse</button>
+          <button data-tool="text">Text</button>
+        </div>
+
+        <label>
+          Stroke
+          <input id="strokeColor" type="color" value="#1f2937" />
+        </label>
+        <label>
+          Fill
+          <input id="fillColor" type="color" value="#ffffff" />
+        </label>
+        <label>
+          Width
+          <input id="strokeWidth" type="range" min="1" max="10" value="2" />
+        </label>
+
+        <div class="tool-group">
+          <button id="undoBtn">Undo</button>
+          <button id="redoBtn">Redo</button>
+          <button id="clearBtn">Clear</button>
+          <button id="exportBtn">Export PNG</button>
+        </div>
+      </section>
+
+      <section class="canvas-wrap">
+        <canvas id="board" width="1200" height="700"></canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
